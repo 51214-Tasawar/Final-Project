@@ -4,10 +4,12 @@
     "start": "nodemon app"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "express": "^4.21.2",
     "joi": "^17.13.3",
     "nodemon": "^3.1.7",
-    "routes": "^2.1.0"
+    "routes": "^2.1.0",
+    "uuid": "^11.0.3"
   }
 }

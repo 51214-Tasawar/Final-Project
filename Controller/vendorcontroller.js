@@ -2,9 +2,14 @@ const responseHandler = require("../responseHandler");
 const errorHandler = require("../errorHandler")
 
 
+const {hash} = require("bcrypt")
+const {v4 : vendorId} = require("uuid")
+
 module.exports ={
-    createvendor:(req , res)=>{
+    createvendor:async(req , res)=>{
         try{
+          req.body.vendorId = vendorId()
+          req.body.password = await hash(req.body.password , 10)
         return responseHandler(res , req.body)
          }catch(error){
            return errorHandler(res , error)
@@ -17,8 +22,9 @@ module.exports ={
     return errorHandler(res , error)
      }
    },
-   updatevendor:(req , res)=>{
+   updatevendor: async(req , res)=>{
     try{
+      req.body.password = await hash(req.body.password , 10)
     return responseHandler(res , req.body)
      }catch(error){
      return errorHandler(res , error)

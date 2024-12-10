@@ -1,9 +1,14 @@
 const responseHandler= require("../responseHandler")
 const errorHandler = require("../errorHandler")
 
+const { hash } = require("bcrypt")
+const {v4 : adminId} = require("uuid")
+
 module.exports ={
-createadmin:(req , res)=>{
+createadmin: async(req , res)=>{
 try{
+    req.body.password = await hash(req.body.password , 10)
+    req.body.adminId = adminId()
     return responseHandler(res , req.body)
 }catch(error){
     return errorHandler(res , error)
@@ -16,8 +21,9 @@ getadmin:(req , res)=>{
  return errorHandler(res , error)
  }
 },
-updateadmin:(req , res)=>{
+updateadmin:async(req , res)=>{
     try{
+        req.body.password = await hash(req.body.password , 10)
     return responseHandler(res , req.body)
     }catch(error){
     return errorHandler(res , error)

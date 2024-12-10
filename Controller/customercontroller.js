@@ -1,9 +1,14 @@
 const responseHandler = require("../responseHandler")
 const errorHandler = require("../errorHandler")
 
+const {hash} = require("bcrypt")
+const {v4 : customerId} = require("uuid")
+
 module.exports ={
-    createcustomer:(req , res)=>{
+    createcustomer:async(req , res)=>{
         try{
+          req.body.customerId = customerId()
+          req.body.password = await hash(req.body.password , 10)
          return responseHandler(res , req.body)
          }catch(error){
          return errorHandler(res , error)
@@ -16,8 +21,9 @@ module.exports ={
     return errorHandler(res , error)
      }
    },
-   updatecustomer:(req , res)=>{
+   updatecustomer:async(req , res)=>{
     try{
+      req.body.password = await hash(req.body.password , 10)
     return responseHandler(res , req.body)
      }catch(error){
     return errorHandler(res , error)

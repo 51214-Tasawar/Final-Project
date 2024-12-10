@@ -1,10 +1,11 @@
-const newrout = require("express").Router()
-
 const {createvendor
      , getvendor ,
       updatevendor,
     deletevendor } = require("../Controller/vendorcontroller")
 const {Create , Update , getDelete} = require("../Validators/uservalidation")
+
+const newrout = require("express").Router();
+
 
 
 

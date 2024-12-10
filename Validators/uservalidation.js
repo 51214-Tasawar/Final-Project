@@ -7,7 +7,7 @@ const createSchema = joi.object (
     {
         name : joi.string().min(6).max(50) ,
         email : joi.string().min(8).max(50) ,
-       usernam : joi.string().min(6).max(10).required(),
+       username : joi.string().min(6).max(10).required(),
        password :joi.string().min(6).max(1000).required()
     } 
 )
@@ -15,7 +15,7 @@ const createSchema = joi.object (
 const UpdateSchema = joi.object({
     name : joi.string().min(6).max(50) ,
     email : joi.string().min(8).max(50) ,
-   usernam : joi.string().min(6).max(20).required(),
+   username : joi.string().min(6).max(20).required(),
    password :joi.string().min(6).max(1000).required()
 })
 
