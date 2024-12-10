@@ -4,7 +4,6 @@ module.exports ={
     res.send(
     {
          status : "ok" ,
-        status : 200 ,
         data : req.body
          
      }
