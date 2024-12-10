@@ -53,7 +53,7 @@ module.exports = {
     await getDeleteSchema.validateAsync(req.query)
     next()
    }catch(error){
-   return({
+   return res.send({
     status: "Not Ok",
     code : 400 ,
     error : error.message
