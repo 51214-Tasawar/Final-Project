@@ -8,6 +8,6 @@ const {createvendor
 newrout.post("/createvendor" , createvendor);
 newrout.get("/getvendor" , getvendor);
 newrout.patch("/updatevendor" , updatevendor);
-newrout.deletevendor("/deletevendor" , deletevendor)
+newrout.delete("/deletevendor" , deletevendor)
 
-module.exports = newrout
+module.exports = newrout  

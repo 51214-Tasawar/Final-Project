@@ -1,15 +1,72 @@
 module.exports ={
     createcustomer:(req , res)=>{
-   console.log(req.body)   
-   return res.send("Admin Created");
+        try{
+    
+            return res.send(
+             {
+                 status : "Ok" ,
+                 code : 200 ,
+                 data : req.body
+             }
+            )
+         }catch(error){
+            res.send({
+             status : "Not Ok" ,
+             code : 400 ,
+             data : {}
+            })
+         }
    },
    getcustomer:(req , res)=>{
-    return res.send("This My Testing Demo")
+    try{
+        return res.send(
+            {
+                status : "Ok" ,
+                code : 200 ,
+                data : req.query
+            }
+           )
+     }catch(error){
+        res.send({
+            status : "Not Ok" ,
+            code : 400 ,
+            data : {}
+           })
+     }
    },
    updatecustomer:(req , res)=>{
-       return res.send("This My Testing Demo")
+    try{
+    
+        return res.send(
+         {
+             status : "Ok" ,
+             code : 200 ,
+             data : req.body
+         }
+        )
+     }catch(error){
+        res.send({
+         status : "Not Ok" ,
+         code : 400 ,
+         data : {}
+        })
+     }
    },
       deletecustomer:(req , res)=>{
-       return res.send("This My Testing Demo")
+        try{
+            return res.send(
+                {
+                    status : "Ok" ,
+                    code : 200 ,
+                    data : req.query
+                }
+               )
+         }catch(error){
+            res.send({
+                status : "Not Ok" ,
+                code : 400 ,
+                data : {}
+               })
+         }
    }
    }
