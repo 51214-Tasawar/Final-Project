@@ -1,72 +1,33 @@
+const responseHandler = require("../responseHandler")
+const errorHandler = require("../errorHandler")
+
 module.exports ={
     createcustomer:(req , res)=>{
         try{
-    
-            return res.send(
-             {
-                 status : "Ok" ,
-                 code : 200 ,
-                 data : req.body
-             }
-            )
+         return responseHandler(res , req.body)
          }catch(error){
-            res.send({
-             status : "Not Ok" ,
-             code : 400 ,
-             data : {}
-            })
+         return errorHandler(res , error)
          }
    },
    getcustomer:(req , res)=>{
     try{
-        return res.send(
-            {
-                status : "Ok" ,
-                code : 200 ,
-                data : req.query
-            }
-           )
+    return responseHandler(res , req.query)
      }catch(error){
-        res.send({
-            status : "Not Ok" ,
-            code : 400 ,
-            data : {}
-           })
+    return errorHandler(res , error)
      }
    },
    updatecustomer:(req , res)=>{
     try{
-    
-        return res.send(
-         {
-             status : "Ok" ,
-             code : 200 ,
-             data : req.body
-         }
-        )
+    return responseHandler(res , req.body)
      }catch(error){
-        res.send({
-         status : "Not Ok" ,
-         code : 400 ,
-         data : {}
-        })
+    return errorHandler(res , error)
      }
    },
       deletecustomer:(req , res)=>{
         try{
-            return res.send(
-                {
-                    status : "Ok" ,
-                    code : 200 ,
-                    data : req.query
-                }
-               )
+       return responseHandler(res , req.query)
          }catch(error){
-            res.send({
-                status : "Not Ok" ,
-                code : 400 ,
-                data : {}
-               })
+        return errorHandler(res , error)
          }
    }
    }

@@ -1,5 +1,4 @@
-xmodule.exports =(res ,data)=> {
-   
+module.exports =(res ,data)=> {
     try{
      res.send({
        code : 200 ,

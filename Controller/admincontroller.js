@@ -1,71 +1,33 @@
+const responseHandler= require("../responseHandler")
+const errorHandler = require("../errorHandler")
+
 module.exports ={
- createadmin:(req , res)=>{
+createadmin:(req , res)=>{
 try{
-    
-   return res.send(
-    {
-        status : "Ok" ,
-        code : 200 ,
-        data : req.body
-    }
-   )
+    return responseHandler(res , req.body)
 }catch(error){
-   res.send({
-    status : "Not Ok" ,
-    code : 400 ,
-    data : {}
-   })
+    return errorHandler(res , error)
 }
 },
 getadmin:(req , res)=>{
  try{
-    return res.send(
-        {
-            status : "Ok" ,
-            code : 200 ,
-            data : req.query
-        }
-       )
+ return responseHandler(res , req.query)
  }catch(error){
-    res.send({
-        status : "Not Ok" ,
-        code : 400 ,
-        data : {}
-       })
+ return errorHandler(res , error)
  }
 },
 updateadmin:(req , res)=>{
     try{
-        return res.send(
-            {
-                status : "Ok" ,
-                code : 200 ,
-                data : req.body
-            }
-           )
+    return responseHandler(res , req.body)
     }catch(error){
-        res.send({
-            status : "Not Ok" ,
-            code : 400 ,
-            data : {}
-           })
+    return errorHandler(res , error)
     }
 },
    deleteadmin:(req , res)=>{
    try{
-    return res.send(
-        {
-            status : "Ok" ,
-            code : 200 ,
-            data : req.query
-        }
-       )
+    return responseHandler(res , req.query)
    }catch(error){
-    res.send({
-        status : "Not Ok" ,
-        code : 400 ,
-        data : {}
-       })
+    return errorHandler(res , error)
    }
 }
 }
