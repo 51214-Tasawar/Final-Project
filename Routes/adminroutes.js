@@ -4,11 +4,11 @@ const {createadmin ,
     updateadmin ,
     deleteadmin
 } = require("../Controller/admincontroller");
-const {Create} = require("../Validators/uservalidation")
+const {Create , Update , getDelete} = require("../Validators/uservalidation")
 
 routes.post("/createAdmin" , Create ,createadmin);
-routes.get("/getadmin" , getadmin)
-routes.patch("/updateadmin" , updateadmin)
-routes.delete("/deleteadmin" , deleteadmin)
+routes.get("/getadmin" , getDelete, getadmin)
+routes.patch("/updateadmin" , Update , updateadmin)
+routes.delete("/deleteadmin" ,  getDelete ,deleteadmin)
 
 module.exports = routes ;

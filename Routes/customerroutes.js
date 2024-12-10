@@ -7,9 +7,14 @@ const {
     deletecustomer
 } = require("../Controller/customercontroller") ;
 
-custroutes.post("/createcustomer" , createcustomer);
-custroutes.get("/getcustomer" , getcustomer);
-custroutes.patch("/updatecustomer" , updatecustomer);
-custroutes.delete("/deletecutomer" , deletecustomer) 
+const {Create , Update , getDelete} = require("../Validators/uservalidation")
+
+
+
+
+custroutes.post("/createcustomer" , Create ,createcustomer);
+custroutes.get("/getcustomer" , getDelete,getcustomer);
+custroutes.patch("/updatecustomer" , Update, updatecustomer);
+custroutes.delete("/deletecutomer" , getDelete ,deletecustomer) 
 
 module.exports = custroutes ;

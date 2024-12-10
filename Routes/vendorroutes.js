@@ -4,10 +4,13 @@ const {createvendor
      , getvendor ,
       updatevendor,
     deletevendor } = require("../Controller/vendorcontroller")
+const {Create , Update , getDelete} = require("../Validators/uservalidation")
 
-newrout.post("/createvendor" , createvendor);
-newrout.get("/getvendor" , getvendor);
-newrout.patch("/updatevendor" , updatevendor);
-newrout.delete("/deletevendor" , deletevendor)
+
+
+newrout.post("/createvendor",Create,createvendor);
+newrout.get("/getvendor" ,getDelete,getvendor);
+newrout.patch("/updatevendor" , Update ,updatevendor);
+newrout.delete("/deletevendor" , getDelete,deletevendor)
 
 module.exports = newrout  
