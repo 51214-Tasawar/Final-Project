@@ -1,6 +1,13 @@
 const routes = require("express").Router() ;
-const {Createadmin} = require("../Controller/admincontroller");
+const {createadmin ,
+    getadmin ,
+    updateadmin ,
+    deleteadmin
+} = require("../Controller/admincontroller");
 
-routes.get("/createAdmin" , Createadmin);
+routes.post("/createAdmin" , createadmin);
+routes.get("/getadmin" , getadmin)
+routes.patch("/updateadmin" , updateadmin)
+routes.delete("/deleteadmin" , deleteadmin)
 
 module.exports = routes ;
