@@ -1,11 +1,15 @@
 const routes = require("./Routes/adminroutes")
 
 const  express = require("express");
+const bodyParser = require("body-parser")
 
 
 const App = express()
 
-const port = 3001 ;
+const port = 3002 ;
+
+App.use(bodyParser.urlencoded({ extended: false}))
+App.use(bodyParser.json()) 
 
 App.use("/admin" , routes)
 
