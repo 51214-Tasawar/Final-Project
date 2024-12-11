@@ -15,7 +15,6 @@ module.exports ={
           req.body.password = await hash(req.body.password , 10)
 
           const response =  await createCustomer (req.body)
-          
           if(response.error){
              return errorHandler(res , response.error)
           }
