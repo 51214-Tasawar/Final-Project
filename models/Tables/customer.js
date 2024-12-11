@@ -5,7 +5,7 @@ const sequelize = require("../../dbconnection")
 class CustomerTable extends Model { }
 
 CustomerTable.init({
-    CustomerId : {
+    customerId : {
         primaryKey : true ,
        type : DataTypes.STRING(100)
     },
