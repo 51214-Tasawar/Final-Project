@@ -1,6 +1,6 @@
 const responseHandler= require("../responseHandler")
 const errorHandler = require("../errorHandler")
-
+const {createAdmin} = require("../models/adminModel")
 const { hash } = require("bcrypt")
 const {v4 : adminId} = require("uuid")
 
@@ -9,7 +9,15 @@ createadmin: async(req , res)=>{
 try{
     req.body.password = await hash(req.body.password , 10)
     req.body.adminId = adminId()
-    return responseHandler(res , req.body)
+   const response =  await createAdmin (req.body)
+
+   if(response.error){
+      return errorHandler(res , response.error)
+   }
+    return responseHandler(res , response.response)
+
+
+
 }catch(error){
     return errorHandler(res , error)
 }
