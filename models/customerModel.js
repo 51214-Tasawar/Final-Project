@@ -46,11 +46,11 @@ module.exports = {
        } ,
        DeleteCustomer : async({username})=>{
         try{
-        const DeleteAdmin = await models.CustomerTable.destroy(
+        const Deletecustomer = await models.CustomerTable.destroy(
             {where : {username : username}}
         )
         return {
-           response : DeleteAdmin
+           response : Deletecustomer
         }
         }catch(error){
          return{ 
