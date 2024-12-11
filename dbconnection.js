@@ -11,4 +11,10 @@ const sequelize = new Sequelize({
     dialect : process.env.DBDIALECT
 })
 
+sequelize.authenticate().then(()=>{
+console.log("Conected To The database")
+}).catch(()=>{
+    console.log("Not Connected")
+})
+
 module.exports = sequelize ;
