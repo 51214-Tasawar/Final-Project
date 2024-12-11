@@ -1,5 +1,7 @@
 const {DataTypes , Model} = require("sequelize")
 
+const sequelize = require("../../dbconnection")
+
 class CustomerTable extends Model { }
 
 CustomerTable.init({
@@ -28,7 +30,7 @@ CustomerTable.init({
     name : "CustomerTable" ,
     paranoid : true ,
     timestamps : true ,
-
+    sequelize : sequelize
 })
 
 module.exports = CustomerTable ;

@@ -1,4 +1,5 @@
 const {DataTypes , Model} = require("sequelize")
+const sequelize = require("../../dbconnection")
 
 class VendorTable extends Model { }
 
@@ -28,7 +29,7 @@ VendorTable.init({
     name : "VendorTable" ,
     paranoid : true ,
     timestamps : true ,
-
+    sequelize : sequelize
 })
 
 module.exports = VendorTable ;
