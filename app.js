@@ -1,8 +1,9 @@
 const routes = require("./Routes/adminroutes")
 const newrout = require("./Routes/vendorroutes")
 const custroutes = require("./Routes/customerroutes");
-const bodyParser = require("body-parser");
+const {db} = require("./models/index")
 
+const bodyParser = require("body-parser");
 const  express = require("express");
 
 
@@ -19,7 +20,15 @@ App.use("/admin" , routes)
 App.use("/verdor" , newrout)
 App.use("/customer" , custroutes)
 
+
+
+
 App.listen(port ,()=>{
     console.log(`Testing At port  ${port}`)
+})
+db.sequelize.sync({alter:true, logging:false}).then(()=>{
+    console.log("Connected")
+}).catch(()=>{
+  console.log("Giving Error")
 })
 
