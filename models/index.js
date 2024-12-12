@@ -13,8 +13,8 @@ const sequelize = require("../dbconnection")
 
 // Create 1:M Relation while Vendors is Parent
 
-vendors.hasMany(products ,  { foreignKey : "vendorId"})
-products.belongsTo(vendors ,  { foreignKey: "vendorId "})
+VendorTable.hasMany(products ,  { foreignKey : "vendorId"})
+products.belongsTo(VendorTable ,  { foreignKey: "vendorId "})
 
 // // product and productveriation 1: M Relationcl
 
