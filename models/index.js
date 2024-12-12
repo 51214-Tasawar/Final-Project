@@ -4,8 +4,8 @@ const CustomerTable = require ("./Tables/customer")
 
 const products = require("./Tables/products")
 const productsverations= require("./Tables/productverations")
-const variationHasAttributes = require("./definations/variationHasAttributes")
-const attributes = require("./definations/attributes")
+const variationHasAttributes = require("./Tables/variationHasAttributes")
+const attributes = require("./Tables/attributes")
 
 const sequelize = require("../dbconnection")
 
@@ -14,7 +14,7 @@ const sequelize = require("../dbconnection")
 // Create 1:M Relation while Vendors is Parent
 
 Vendors.hasMany(products ,  { foreignKey : "vendorId"})
-products.belongsTo(Vendors ,  { foreignKey: "vendorId"})
+products.belongsTo(vendors ,  { foreignKey: "vendorId "})
 
 // // product and productveriation 1: M Relationcl
 
