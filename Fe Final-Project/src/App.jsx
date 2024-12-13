@@ -8,7 +8,8 @@ const App =()=>{
       <h1>Current State Number{count}</h1>
       <button onClick={()=>setCount(count + 1)}
         className="bg-green-500 p-2 rounded-md text-white font-light">Increement</button><br/>
-      <button onClick={()=>setCount(count - 1)}>Substraction</button>
+      <button onClick={()=>setCount(count - 1)}
+        className="bg-red-500 p-2 rounded-md text-white font-light  mt-2">Substraction</button>
     </div>
     </>
   )
