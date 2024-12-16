@@ -1,17 +1,40 @@
-import { useState } from "react"
+import React, { useState } from "react";
+import Auth from "./auth";
+import Index from "..";
+import { Route, Routes, useLocation } from "react-router-dom";
+import Products from "../product";
+import Homepage from "./Products/Home";
+import ContactUs from "./Products/ContactUs";
+import AboutUs from "./Products/About";
+import Services from "./Products/Services";
+import Create from "./Products/create";
+import Get from "./Products/get";
+import Layout from "./layouts/layout";
 
-const App =()=>{
-  const [count , setCount] = useState(0);
-  return(
+const App = () => {
+  const location = useLocation();
+
+  const pathnm = location.pathname === "/";
+
+  return (
     <>
-    <div>
-      <h1>Current State Number : {count}</h1>
-      <button onClick={()=>setCount(count + 1)}
-        className="bg-green-500 p-2 rounded-md text-white font-light">Increement</button>
-      <button onClick={()=>setCount(count - 1)}
-        className="bg-red-500 p-2 rounded-md text-white font-light  ml-2">Substraction</button>
-    </div>
+      {pathnm ? (
+        <Routes>
+          <Route index element={<Auth />} />
+        </Routes>
+      ) : (
+        <Layout>
+          <Routes>
+            <Route path="index" element={<Index />}></Route>
+            <Route path="product" >
+              <Route index element={<Products />}/>
+              <Route path="create-product" element={<Create />}></Route>
+              <Route path="get-Product" element={<Get />}></Route>
+            </Route>
+          </Routes>
+        </Layout>
+      )}
     </>
-  )
-}
- export default App 
+  );
+};
+export default App;
