@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Login from "./component.jsx/login"
-import Signup from "./component.jsx/signup"
+import Login from "./component/login"
+import Signup from "./component/signup"
 
 const Auth=()=>{
     // const [auth , setAuth] =useState("signup")

@@ -1,18 +1,9 @@
-import Navbar from "./nev-bar"
-import SideBar from "./side-bar"
-
-const Layout =({children})=>{
+const Layouts =()=>{
     return(
         <>
-        <div>
-            <Navbar/>
-           <div className="w-full h-full flex ">
-             <SideBar/>
-            {children}
-           </div>
-        </div>
+         <div className=" h-fullw-full bg-red-700"></div>
         </>
     )
 }
 
-export default Layout
+export default Layouts ;
