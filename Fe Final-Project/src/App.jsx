@@ -1,13 +1,13 @@
 import React from "react";
 import Auth from "./auth"
-// import Auth from "./auth";
+import Auth from "./auth";
 import Index from "./index";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Products from "./product";
-import Homepage from "./Products/Home";
-import ContactUs from "./Products/ContactUs";
-import AboutUs from "./Products/About";
-import Services from "./Products/Services";
+// import Homepage from "./Products/Home";
+// import ContactUs from "./Products/ContactUs";
+// import AboutUs from "./Products/About";
+// import Services from "./Products/Services";
 import Create from "./Products/create";
 import Get from "./Products/get";
 import Layout from "./layouts/layout";
