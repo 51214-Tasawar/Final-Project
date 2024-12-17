@@ -21,7 +21,7 @@ const App = () => {
     <>
       {pathnm ? (
         <Routes>
-          <Route element={<Auth />} />
+          <Route index element={<Auth />} />
         </Routes>
       ) : (
         <Layout>
