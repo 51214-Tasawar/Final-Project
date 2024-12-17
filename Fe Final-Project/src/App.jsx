@@ -1,6 +1,6 @@
 import React from "react";
 import Auth from "./auth"
-import Auth from "./auth";
+// import Auth from "./auth";
 import Index from "./index";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Products from "./product";
@@ -21,7 +21,7 @@ const App = () => {
     <>
       {pathnm ? (
         <Routes>
-          <Route index element={<Auth />} />
+          <Route element={<Auth />} />
         </Routes>
       ) : (
         <Layout>
