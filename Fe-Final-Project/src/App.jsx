@@ -1,9 +1,9 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import Index from "./";
 import Auth from "./auth";
-import Product from "./product";
-import CreateProduct from "./components/Products/createproduct";
-import GetProduct from "./components/Products/getproduct";
+import Customer from "./customers";
+import CreateCustomer from "./components/Products/createcustomer";
+import GetCustomer from "./components/Products/getcustomers";
 import Layouts from "./components/Layouts/layout";
 
 // Protected and Public Route ? ---
@@ -21,10 +21,10 @@ const App=()=>{
       <Layouts>
       <Routes>
       <Route path="index" element={<Index/>}/>
-      <Route path="product" >
-   <Route index element={<Product/>}/>
-   <Route path="createproduct" element={<CreateProduct/>}/>
-   <Route path="getproduct" element={<GetProduct/>}/>
+      <Route path="customers" >
+   <Route index element={<Customer/>}/>
+   <Route path="createcustomer" element={<Customer><CreateCustomer/></Customer>}/>
+   <Route path="getcustomer" element={<Customer><GetCustomer/></Customer>}/>
    </Route>
       </Routes>
       </Layouts>
