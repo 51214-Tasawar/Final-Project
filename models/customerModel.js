@@ -17,7 +17,9 @@ module.exports = {
     } ,
     getAll : async()=>{
         try{
-        const NewAdmin = await models.CustomerTable.findAll()
+        const NewAdmin = await models.CustomerTable.findAll({
+          attributes:["customerId","name","username","email"]
+        })
         return {
            response : NewAdmin
         }

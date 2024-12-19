@@ -2,6 +2,7 @@ const routes = require("./Routes/adminroutes")
 const newrout = require("./Routes/vendorroutes")
 const custroutes = require("./Routes/customerroutes");
 const {db} = require("./models/index")
+const cors = require("cors")
 
 const bodyParser = require("body-parser");
 const  express = require("express");
@@ -15,7 +16,10 @@ const port = 3006;
 
 App.use(bodyParser.urlencoded({ extended: false}))
 App.use(bodyParser.json()) 
-
+App.use(cors({
+  credentials : true ,
+  origin : true
+}))
 App.use("/admin" , routes)
 App.use("/verdor" , newrout)
 App.use("/customer" , custroutes)
