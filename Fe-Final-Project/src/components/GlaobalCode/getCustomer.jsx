@@ -10,3 +10,5 @@ const GetAllCustomer =({customer})=>{
       </div>
    )
   }
+
+  export default GetAllCustomer
