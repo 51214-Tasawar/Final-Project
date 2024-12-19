@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { data } from "react-router-dom"
+import GetAllCustomer from "../GlaobalCode/getAllCustomer"
 
 const GetCustomer =()=>{
     const [data , setDate] = useState([])
