@@ -13,11 +13,11 @@ const App=()=>{
   const ispathlocation = pathlocation.pathname == "/";
   return(
     <>
-    {ispathlocation ? (
+    {/* {ispathlocation ? (
       <Routes>
         <Route index element={<Auth/>}></Route>
       </Routes>
-    ):(
+    ):( */}
       <Layouts>
       <Routes>
       <Route path="index" element={<Index/>}/>
