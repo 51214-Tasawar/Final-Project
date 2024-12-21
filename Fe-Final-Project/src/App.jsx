@@ -2,8 +2,8 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Index from "./";
 import Auth from "./auth";
 import Customer from "./customers";
-import CreateCustomer from "./components/Products/createcustomer";
-import GetCustomer from "./components/Products/getcustomers";
+import CreateCustomer from "./components/Customers/createcustomer";
+import GetCustomer from "./components/Customers/getcustomers";
 import Layouts from "./components/Layouts/layout";
 
 // Protected and Public Route ? ---

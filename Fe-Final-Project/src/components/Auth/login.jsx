@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 
 const Login =({setAuth})=>{
       const navigate =useNavigate()
+      
     return(
         <>
        <div className="h-screen w-screen bg-red-300 flex justify-center items-center">
