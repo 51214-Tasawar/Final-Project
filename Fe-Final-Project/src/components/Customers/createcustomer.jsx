@@ -1,8 +1,12 @@
 import axios from "axios";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const CreateCustomer = () => {
+ 
+  const UploadImage = useRef() 
+  const [custimg , setCustimg] = useState("") 
+
   const navigate = useNavigate()
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
@@ -30,17 +34,34 @@ const CreateCustomer = () => {
       }
       
  }
-
-
-
   return (
     <>
       <div className="w-full h-full bg-white">
         <h1 className="text-xl font-semibold py-2 ">Create Customer</h1>
         <div className="w-full h-full flex flex-col">
           <label>Upload Image</label>
-          <div className="w-36 h-28  bg-gray-200 rounded-md flex justify-center items-center mb-2">
-            <p className="font-semibold text-white text-4xl "> + </p>
+          <div 
+          onClick={()=>{
+            UploadImage.current.click()
+          }}
+          className="w-36 h-28  bg-gray-200 rounded-md cursor-pointer flex justify-center items-center mb-2">
+            {custimg?(<img src={custimg} className="w-full h-full"></img>):(<p className="font-semibold text-white text-4xl "> + </p>)}
+            <input
+                onChange={(e) => {
+                  console.log(e.target);
+                  const custimgFiles = e.target.files[0]
+                  const imgurl = URL.createObjectURL(custimgFiles)
+                  setCustimg(imgurl)
+                }}
+                ref={UploadImage}
+                className="hidden"
+                type="file"
+                placeholder="Upload Image"
+                name="username"
+                accept="image/*"
+                multiple
+                required
+              />
           </div>
         </div>
         <div className="w-full h-full flex ">
