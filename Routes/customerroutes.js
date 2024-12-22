@@ -12,8 +12,8 @@ const {Create , Update , getDelete} = require("../Validators/uservalidation")
 
 
 
-// custroutes.post("/createcustomer" , Create ,createcustomer);
-// custroutes.get("/getcustomer" ,getcustomer);
+custroutes.post("/createcustomer" , Create ,createcustomer);
+custroutes.get("/getcustomer" ,getcustomer);
 // custroutes.get("/getcustomer" , getDelete,getcustomer); Create Function to Get One Customer
 custroutes.patch("/updatecustomer" , Update, updatecustomer);
 custroutes.delete("/deletecutomer" , getDelete ,deletecustomer) 
