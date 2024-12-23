@@ -8,7 +8,7 @@ const createSchema = joi.object (
         name : joi.string().min(6).max(50) ,
         email : joi.string().min(8).max(50) ,
        username : joi.string().min(6).max(100).required(),
-       password :joi.string().min(6).max(1000).required()
+       password :joi.string().min(6).max(1000)
     } 
 )
 
@@ -20,7 +20,7 @@ const UpdateSchema = joi.object({
 })
 
 const getDeleteSchema = joi.object({
-username : joi.string().min(6).max(100).required()
+username : joi.string().required()
 })
 
 module.exports = {
