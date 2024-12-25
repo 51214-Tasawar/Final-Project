@@ -36,11 +36,11 @@ module.exports = {
         try{
         const Updaterecord = await models.CustomerTable.update(
             { ...body }
-            // ,{
-            //     where : {
-            //   username : username
-            //     }
-            // }
+            ,{
+                where : {
+              username : username
+                }
+            }
           )
         return {
            response : Updaterecord
