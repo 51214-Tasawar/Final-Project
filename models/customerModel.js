@@ -1,6 +1,7 @@
 
 const { where } = require("sequelize")
 const {models} = require("./index")
+const CustomerTable = require("./Tables/customer")
 
 module.exports = {
     createCustomer : async(body)=>{
@@ -29,14 +30,18 @@ module.exports = {
        }
         }
        } ,
-       UpdateCustomer : async({username, ...body})=>{
+       UpdateCustomer : async({...body})=>{
+      console.log(username)
+        console.log(body);
         try{
         const Updaterecord = await models.CustomerTable.update(
-            { ...body },{
-                where : {
-              username : username
-                }
-            })
+            { ...body }
+            // ,{
+            //     where : {
+            //   username : username
+            //     }
+            // }
+          )
         return {
            response : Updaterecord
         }
@@ -46,7 +51,8 @@ module.exports = {
        }
         }
        } ,
-       DeleteCustomer : async({username})=>{
+      
+      DeleteCustomer : async({username})=>{
         try{
         const Deletecustomer = await models.CustomerTable.destroy(
             {where : {username : username}}

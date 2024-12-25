@@ -36,8 +36,10 @@ module.exports ={
    },
    updatecustomer:async(req , res)=>{
     try{
-      req.body.password = await hash(req.body.password , 10)
-
+      // console.log(req.body);
+      // console.log(req.body.username);
+      // req.body.password = await hash(req.body.password , 10)
+        console.log("check api call");
       const response =  await UpdateCustomer (req.body)
       if(response.error){
          return errorHandler(res , response.error)

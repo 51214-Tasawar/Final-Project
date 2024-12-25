@@ -40,9 +40,9 @@ const GetCustomer = () => {
            withCredentials: true,
          }
        )
-
+      console.log(data)
         setActionModal("")
-        void GetAllCustomer ();
+        void getAll ();
 
   }
 
@@ -55,7 +55,8 @@ const GetCustomer = () => {
         withCredentials: true,
       }
     )
-    void GetAllCustomer () 
+
+    void getAll () 
     setActionModal("")
   }
 
@@ -89,7 +90,7 @@ const GetCustomer = () => {
           </>
         )}
         <Modal
-          isOpen={actionModal === "update"}
+          isOpen={actionModal==="update"}
           onRequestClose={() => {
             setActionModal("");
           }}
@@ -98,17 +99,18 @@ const GetCustomer = () => {
           <div className="w-1/4 h-1/2 items-center bg-white  rounded-md  border-2 border-blue-700">
             <div className=" flex flex-col items-center justify-center mt-5">
               <input
+              value={name}
                 onChange={(e) => {
                   console.log(e.target.value);
-                  setUsername(e.target.value);
+                  setName(e.target.value);
                 }}
                 className="w-64 h-10 p-2 focus:outline-none  mb-6 bg-slate-200 rounded-md"
                 type="name"
                 name="name"
                 required
-                defaultValue={name}
               />
               <input
+              value={username}
                 onChange={(e) => {
                   console.log(e.target.value);
                   setUsername(e.target.value);
@@ -117,19 +119,19 @@ const GetCustomer = () => {
                 type="username"
                 name="username"
                 required
-                defaultValue={username}
               />
 
               <input
+               defaultValue={email}
                 onChange={(e) => {
                   console.log(e.target.value);
-                  setUsername(e.target.value);
+                  setEmail(e.target.value);
                 }}
                 className="w-64 h-10 p-2 focus:outline-none  mb-2 bg-slate-200 rounded-md"
                 type="email"
                 name="email"
                 required
-                defaultValue={email}
+               
               />
             </div>
             <div className="w-full h-1/2 flex items-center justify-center gap-x-4">
