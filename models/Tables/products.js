@@ -9,24 +9,10 @@ products.init ({
         primaryKey : true ,
         type : DataTypes.STRING(100),
     },
-    name:{
+    price:{
         type : DataTypes.STRING(100),
         allowNull : false
     },
-    username: {
-        unique : true ,
-        allowNull:false ,
-        type : DataTypes.STRING(100)
-    },
-    password:{
-   type :DataTypes.STRING(1000),
-   allowNull : true
-    } ,
-    email :{
-        type : DataTypes.STRING(100),
-        allowNull: false ,
-        defaultValue : " " 
-    } , 
     vendorId :{
         type: DataTypes.STRING() ,
         allowNull : false, 
@@ -35,7 +21,7 @@ products.init ({
          key : "vendorId"
         }
 
-    }
+    }            
 },{
     name : "products" ,
     timestamps : true ,
